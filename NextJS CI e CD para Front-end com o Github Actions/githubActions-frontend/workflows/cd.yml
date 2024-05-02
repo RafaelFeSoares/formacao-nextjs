@@ -1,0 +1,23 @@
+name: "CD (Entrega Continua): Main Workflow"
+
+# Usando o secrets do github você pode armazenar variaveis de ambiente lá, sem vazar os tokens
+
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} #Está no perfil e website tokens
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }} #ORG ID no build do vercel vem aqui
+  VERCEL_PRODUCT_ID: ${{ secrets.VERCEL_PRODUCT_ID }}
+
+on:
+  push:
+    branches: [main, a2.3]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run Deploy
+        run: |
+          yarn install
+          yarn deploy:prod

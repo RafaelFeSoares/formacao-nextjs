@@ -1,0 +1,15 @@
+{
+  "name": "@alura/utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint './**/*.{ts,tsx}'"
+  },
+  "devDependencies": {
+    "@alura/test-commons": "*",
+    "@alura/tsconfig-commons": "*",
+    "@alura/eslint-commons": "*"
+  }
+}
